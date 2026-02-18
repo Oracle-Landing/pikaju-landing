@@ -1,0 +1,8 @@
+name = "pikaju-landing"
+compatibility_date = "2025-01-01"
+
+[site]
+bucket = "./dist"
+
+# Custom domain: pikaju.buildwithoracle.com
+# Configure via Cloudflare Dashboard > Workers & Pages > Custom Domains

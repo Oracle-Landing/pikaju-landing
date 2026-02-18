@@ -1,0 +1,137 @@
+@import "tailwindcss";
+
+/* ── Pikaju Electric Theme ── */
+:root {
+  --pikaju-yellow: #FACC15;
+  --pikaju-blue: #3B82F6;
+  --pikaju-bg: #0a0a0f;
+  --pikaju-surface: rgba(10, 10, 15, 0.7);
+  --pikaju-border: rgba(250, 204, 21, 0.12);
+  --pikaju-text: #f0f0f0;
+  --pikaju-text-muted: #8a8a9a;
+  --pikaju-yellow-rgb: 250, 204, 21;
+  --pikaju-blue-rgb: 59, 130, 246;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--pikaju-bg);
+  color: var(--pikaju-text);
+  font-family: "Sarabun", "Inter", sans-serif;
+}
+
+/* ── Glass Morphism ── */
+.glass {
+  background: var(--pikaju-surface);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--pikaju-border);
+}
+
+.glass-card {
+  background: var(--pikaju-surface);
+  border: 1px solid var(--pikaju-border);
+  border-radius: 1rem;
+  padding: 1.5rem;
+  transition: border-color 0.3s ease, transform 0.3s ease;
+}
+
+.glass-card:hover {
+  border-color: rgba(var(--pikaju-yellow-rgb), 0.3);
+  transform: translateY(-2px);
+}
+
+/* ── Gradient Text ── */
+.gradient-text {
+  background: linear-gradient(135deg, var(--pikaju-yellow), var(--pikaju-blue));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ── Electric Flicker Animation ── */
+@keyframes electric-flicker {
+  0%, 100% {
+    opacity: 1;
+    text-shadow:
+      0 0 10px rgba(var(--pikaju-yellow-rgb), 0.8),
+      0 0 20px rgba(var(--pikaju-yellow-rgb), 0.6),
+      0 0 40px rgba(var(--pikaju-yellow-rgb), 0.4);
+  }
+  10% { opacity: 0.9; }
+  20% { opacity: 1; }
+  30% { opacity: 0.85; }
+  40% { opacity: 1; }
+  70% { opacity: 0.95; }
+  80% {
+    opacity: 1;
+    text-shadow:
+      0 0 15px rgba(var(--pikaju-yellow-rgb), 1),
+      0 0 30px rgba(var(--pikaju-yellow-rgb), 0.8),
+      0 0 60px rgba(var(--pikaju-yellow-rgb), 0.5);
+  }
+}
+
+.electric-flicker {
+  animation: electric-flicker 3s ease-in-out infinite;
+}
+
+/* ── Floating Animation ── */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+}
+
+.animate-float {
+  animation: float 4s ease-in-out infinite;
+}
+
+/* ── Pulse Glow ── */
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 8px rgba(var(--pikaju-yellow-rgb), 0.4);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(var(--pikaju-yellow-rgb), 0.8);
+  }
+}
+
+.pulse-glow {
+  animation: pulse-glow 2.5s ease-in-out infinite;
+}
+
+/* ── Scroll Reveal ── */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ── Section Spacing ── */
+section {
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+}
+
+/* ── Badge ── */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 9999px;
+  font-size: 0.875rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, var(--pikaju-yellow), var(--pikaju-blue));
+  color: #0a0a0f;
+  flex-shrink: 0;
+}
