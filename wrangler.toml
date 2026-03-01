@@ -1,8 +1,11 @@
 name = "pikaju-landing"
 compatibility_date = "2025-01-01"
+account_id = "a5eabdc2b11aae9bd5af46bd6a88179e"
+workers_dev = true
 
-[site]
-bucket = "./dist"
+routes = [
+  { pattern = "pikaju.buildwithoracle.com", custom_domain = true }
+]
 
-# Custom domain: pikaju.buildwithoracle.com
-# Configure via Cloudflare Dashboard > Workers & Pages > Custom Domains
+[assets]
+directory = "./dist"
